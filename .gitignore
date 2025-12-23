@@ -1,0 +1,15 @@
+# Archivos de entorno con contraseñas
+.env
+*.env
+
+# Archivos de configuración de la base de datos (hay contraseña de acceso)
+config/db.php
+
+
+# Logs del sistema
+*.log
+views/error_log
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
