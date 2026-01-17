@@ -1,0 +1,321 @@
+/* 
+ * Estilos específicos para Tablet (768px - 1024px)
+ * Archivo: /views/dashboard/cajero-mobile/css/tablet.css
+ * Optimizaciones para pantallas más grandes
+ */
+
+/* ============================================
+   VARIABLES PARA TABLET
+   ============================================ */
+@media (min-width: 768px) {
+    :root {
+        --border-radius: 12px;
+        --spacing-unit: 1.5rem;
+        --header-height: 70px;
+        --bottom-nav-height: 80px;
+    }
+    
+    /* Dashboard general */
+    .dashboard-mobile {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+    
+    /* Bienvenida mejorada */
+    .welcome-card {
+        padding: 2rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+    }
+    
+    .greeting {
+        font-size: 1.8rem;
+    }
+    
+    .date-time {
+        font-size: 1.1rem;
+    }
+    
+    .welcome-icon {
+        font-size: 3.5rem;
+    }
+    
+    /* Grid de estado optimizado */
+    .status-grid {
+        gap: 1.5rem;
+    }
+    
+    .status-card {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .status-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+    }
+    
+    .status-content h4 {
+        font-size: 1rem;
+    }
+    
+    .status-value {
+        font-size: 1.5rem;
+    }
+    
+    /* Acciones principales */
+    .actions-grid {
+        gap: 1.5rem;
+    }
+    
+    .action-card {
+        padding: 2rem 1rem;
+        border-radius: 12px;
+    }
+    
+    .action-icon {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .action-label {
+        font-size: 1rem;
+    }
+    
+    /* Métricas mejoradas */
+    .metrics-grid {
+        gap: 1.5rem;
+    }
+    
+    .metric-card {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .metric-header {
+        margin-bottom: 1rem;
+    }
+    
+    .metric-header i {
+        font-size: 1.3rem;
+    }
+    
+    .metric-header h4 {
+        font-size: 1rem;
+    }
+    
+    .metric-value {
+        font-size: 1.8rem;
+    }
+    
+    .progress-bar {
+        height: 6px;
+    }
+    
+    /* Ventas recientes */
+    .section-header {
+        margin-bottom: 1.25rem;
+    }
+    
+    .sale-item {
+        padding: 1.25rem;
+    }
+    
+    .sale-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .sale-ticket {
+        font-size: 1.1rem;
+    }
+    
+    .sale-client {
+        font-size: 1rem;
+    }
+    
+    .sale-amount {
+        font-size: 1.2rem;
+    }
+    
+    /* Productos populares */
+    .product-item {
+        padding: 1.25rem;
+    }
+    
+    .product-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .product-name {
+        font-size: 1.1rem;
+    }
+    
+    .product-stats {
+        font-size: 0.875rem;
+    }
+    
+    /* Alertas */
+    .alert {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .alert-icon {
+        font-size: 1.5rem;
+    }
+    
+    .alert-content strong {
+        font-size: 1.1rem;
+    }
+    
+    /* Botones */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+    
+    .btn-sm {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Grid de 2 columnas para ventas y productos en tablet */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .sales-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .sale-item {
+            border: 1px solid #E5E7EB;
+            border-radius: var(--border-radius);
+            border-bottom: none;
+        }
+        
+        .products-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .product-item {
+            border: 1px solid #E5E7EB;
+            border-radius: var(--border-radius);
+            border-bottom: none;
+        }
+    }
+    
+    /* Orientación horizontal en tablet */
+    @media (orientation: landscape) and (max-height: 768px) {
+        .welcome-card {
+            padding: 1.25rem;
+        }
+        
+        .greeting {
+            font-size: 1.5rem;
+        }
+        
+        .welcome-icon {
+            font-size: 2.5rem;
+        }
+        
+        .status-card {
+            padding: 1rem;
+        }
+        
+        .action-card {
+            padding: 1.25rem 0.5rem;
+        }
+        
+        .metric-card {
+            padding: 1rem;
+        }
+        
+        .sale-item, .product-item {
+            padding: 0.875rem;
+        }
+    }
+}
+
+/* ============================================
+   MODO OSCURO PARA TABLET
+   ============================================ */
+@media (min-width: 768px) and (prefers-color-scheme: dark) {
+    .welcome-card,
+    .status-card,
+    .action-card,
+    .metric-card,
+    .sales-list,
+    .sale-item,
+    .products-list,
+    .product-item,
+    .empty-state,
+    .alert {
+        background: #374151;
+        border-color: #4B5563;
+        color: #F9FAFB;
+    }
+    
+    .welcome-text .greeting,
+    .sale-ticket,
+    .product-name,
+    .metric-value {
+        color: #F8FAFC;
+    }
+    
+    .date-time,
+    .status-detail,
+    .metric-label,
+    .sale-client,
+    .sale-time,
+    .product-code,
+    .stat,
+    .alert-content p {
+        color: #D1D5DB;
+    }
+    
+    .status-content h4,
+    .metric-header h4 {
+        color: #9CA3AF;
+    }
+    
+    .sale-icon,
+    .product-icon {
+        background: #4B5563;
+        color: #A7F3D0;
+    }
+    
+    .badge-blue {
+        background: #1E40AF;
+        color: #DBEAFE;
+    }
+    
+    .badge-purple {
+        background: #5B21B6;
+        color: #EDE9FE;
+    }
+    
+    .badge-green {
+        background: #065F46;
+        color: #D1FAE5;
+    }
+    
+    .alert-warning {
+        background: linear-gradient(135deg, #78350F 0%, #92400E 100%);
+        border-color: #F59E0B;
+        color: #FEF3C7;
+    }
+    
+    .alert-danger {
+        background: linear-gradient(135deg, #7F1D1D 0%, #991B1B 100%);
+        border-color: #EF4444;
+        color: #FEE2E2;
+    }
+}

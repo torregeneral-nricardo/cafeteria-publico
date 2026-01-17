@@ -1,0 +1,852 @@
+/* 
+ * Estilos Base para Versión Tablet
+ * Archivo: /assets/css/tablet/base.css
+ */
+
+/* Variables específicas para tablet */
+:root {
+    --tablet-header-height: 75px;
+    --tablet-nav-height: 85px;
+    --tablet-border-radius: 14px;
+    --tablet-spacing: 1.25rem;
+    --tablet-font-size: 1.1rem;
+}
+
+/* Optimizaciones generales para tablet */
+body.device-tablet {
+    font-size: var(--tablet-font-size);
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+/* Header para tablet */
+body.device-tablet .mobile-header {
+    height: var(--tablet-header-height);
+    padding: 0 2rem;
+    border-bottom: 1px solid rgba(5, 150, 105, 0.1);
+}
+
+body.device-tablet .brand-logo {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+}
+
+body.device-tablet .brand-title {
+    font-size: 1.3rem;
+}
+
+body.device-tablet .brand-subtitle {
+    font-size: 0.85rem;
+}
+
+body.device-tablet .user-avatar {
+    width: 45px;
+    height: 45px;
+}
+
+body.device-tablet .avatar-initials {
+    font-size: 1.1rem;
+}
+
+body.device-tablet .btn-menu,
+body.device-tablet .btn-notification {
+    font-size: 1.3rem;
+    padding: 0.75rem;
+}
+
+/* Contenido principal tablet */
+body.device-tablet .mobile-main {
+    margin-top: var(--tablet-header-height);
+    margin-bottom: var(--tablet-nav-height);
+    padding: var(--tablet-spacing);
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navegación inferior tablet */
+body.device-tablet .bottom-nav {
+    height: var(--tablet-nav-height);
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+}
+
+body.device-tablet .nav-item {
+    padding: 0.75rem;
+    border-radius: 12px;
+}
+
+body.device-tablet .nav-item i {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+body.device-tablet .nav-item span {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+body.device-tablet .nav-item.active {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
+}
+
+/* Sidebar tablet */
+body.device-tablet .sidebar {
+    width: 380px;
+    left: -380px;
+}
+
+body.device-tablet .sidebar-header {
+    padding: 2rem;
+}
+
+body.device-tablet .sidebar-user {
+    gap: 1.5rem;
+}
+
+body.device-tablet .user-avatar.large {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+}
+
+body.device-tablet .user-name {
+    font-size: 1.3rem;
+}
+
+body.device-tablet .user-role {
+    font-size: 0.95rem;
+}
+
+body.device-tablet .sidebar-content {
+    padding: 2rem 0;
+}
+
+body.device-tablet .sidebar-link {
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+}
+
+body.device-tablet .sidebar-link i {
+    font-size: 1.2rem;
+}
+
+body.device-tablet .sidebar-toggle {
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Dashboard optimizado para tablet */
+body.device-tablet .dashboard-mobile {
+    padding: 0.5rem;
+}
+
+body.device-tablet .welcome-section {
+    margin-bottom: 2rem;
+}
+
+body.device-tablet .welcome-card {
+    padding: 2rem;
+    border-radius: 20px;
+    background: linear-gradient(135deg, white 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.device-tablet .greeting {
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+body.device-tablet .date-time {
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+body.device-tablet .date-time i {
+    margin-right: 0.5rem;
+}
+
+body.device-tablet .welcome-icon {
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    opacity: 0.8;
+}
+
+body.device-tablet .status-section {
+    margin-bottom: 2rem;
+}
+
+body.device-tablet .status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+body.device-tablet .status-card {
+    padding: 1.5rem;
+    border-radius: var(--tablet-border-radius);
+    background: white;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+body.device-tablet .status-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.device-tablet .status-card.status-open {
+    border-left: 5px solid var(--color-success);
+}
+
+body.device-tablet .status-card.status-closed {
+    border-left: 5px solid var(--color-danger);
+}
+
+body.device-tablet .status-card.status-active {
+    border-left: 5px solid var(--color-info);
+}
+
+body.device-tablet .status-card.status-inactive {
+    border-left: 5px solid var(--color-warning);
+}
+
+body.device-tablet .status-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    font-size: 1.8rem;
+}
+
+body.device-tablet .status-card.status-open .status-icon {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: var(--color-success);
+}
+
+body.device-tablet .status-card.status-closed .status-icon {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: var(--color-danger);
+}
+
+body.device-tablet .status-content {
+    flex: 1;
+}
+
+body.device-tablet .status-content h4 {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+body.device-tablet .status-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+body.device-tablet .status-detail {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+body.device-tablet .status-action {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+body.device-tablet .status-action:hover {
+    color: var(--color-primary);
+}
+
+body.device-tablet .actions-section {
+    margin-bottom: 2.5rem;
+}
+
+body.device-tablet .section-title {
+    font-size: 1.3rem;
+    color: var(--color-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+body.device-tablet .actions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+body.device-tablet .action-card {
+    padding: 1.75rem 1rem;
+    border-radius: var(--tablet-border-radius);
+    background: white;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body.device-tablet .action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.device-tablet .action-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+body.device-tablet .action-card.action-primary:hover {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+}
+
+body.device-tablet .action-card.action-success:hover {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+}
+
+body.device-tablet .action-card.action-info:hover {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+}
+
+body.device-tablet .action-card.action-warning:hover {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+body.device-tablet .action-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+body.device-tablet .action-card:hover .action-icon {
+    color: white;
+}
+
+body.device-tablet .action-label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+body.device-tablet .metrics-section {
+    margin-bottom: 2.5rem;
+}
+
+body.device-tablet .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+body.device-tablet .metric-card {
+    padding: 1.5rem;
+    border-radius: var(--tablet-border-radius);
+    background: white;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+body.device-tablet .metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+body.device-tablet .metric-header i {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+}
+
+body.device-tablet .metric-header h4 {
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+body.device-tablet .metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+body.device-tablet .metric-label {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+}
+
+body.device-tablet .progress-bar {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+body.device-tablet .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-success) 0%, #34d399 100%);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+body.device-tablet .recent-sales-section {
+    margin-bottom: 2.5rem;
+}
+
+body.device-tablet .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+body.device-tablet .see-all {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+body.device-tablet .see-all:hover {
+    color: var(--color-primary-dark);
+}
+
+body.device-tablet .sales-list {
+    background: white;
+    border-radius: var(--tablet-border-radius);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+body.device-tablet .sale-item {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.2s;
+}
+
+body.device-tablet .sale-item:last-child {
+    border-bottom: none;
+}
+
+body.device-tablet .sale-item:hover {
+    background: #f8fafc;
+}
+
+body.device-tablet .sale-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--color-primary);
+}
+
+body.device-tablet .sale-details {
+    flex: 1;
+}
+
+body.device-tablet .sale-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+body.device-tablet .sale-ticket {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+body.device-tablet .sale-time {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+body.device-tablet .sale-client {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+}
+
+body.device-tablet .sale-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body.device-tablet .badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+body.device-tablet .badge-blue {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+body.device-tablet .badge-purple {
+    background: #f3e8ff;
+    color: #7c3aed;
+}
+
+body.device-tablet .sale-amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-success);
+}
+
+body.device-tablet .sale-action {
+    color: #94a3b8;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    transition: color 0.2s;
+}
+
+body.device-tablet .sale-action:hover {
+    color: var(--color-primary);
+}
+
+body.device-tablet .popular-products-section {
+    margin-bottom: 2.5rem;
+}
+
+body.device-tablet .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+body.device-tablet .product-card {
+    background: white;
+    border-radius: var(--tablet-border-radius);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+body.device-tablet .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.device-tablet .product-card.low-stock {
+    border-color: #fecaca;
+}
+
+body.device-tablet .product-image {
+    height: 140px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body.device-tablet .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body.device-tablet .product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #cbd5e1;
+}
+
+body.device-tablet .stock-alert {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ef4444;
+    color: white;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+body.device-tablet .product-info {
+    padding: 1.5rem;
+}
+
+body.device-tablet .product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+}
+
+body.device-tablet .product-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+body.device-tablet .stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+}
+
+body.device-tablet .stat i {
+    color: var(--color-primary);
+}
+
+body.device-tablet .stat.text-danger i {
+    color: #ef4444;
+}
+
+body.device-tablet .stat.text-danger {
+    color: #ef4444;
+}
+
+body.device-tablet .alert {
+    padding: 1.5rem;
+    border-radius: var(--tablet-border-radius);
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fbbf24;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+body.device-tablet .alert-icon {
+    font-size: 1.8rem;
+    color: #f59e0b;
+}
+
+body.device-tablet .alert-content {
+    flex: 1;
+}
+
+body.device-tablet .alert-content strong {
+    font-size: 1.1rem;
+    color: #92400e;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+body.device-tablet .alert-content p {
+    color: #92400e;
+    margin-bottom: 1rem;
+}
+
+body.device-tablet .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+body.device-tablet .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+body.device-tablet .btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+}
+
+body.device-tablet .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
+}
+
+body.device-tablet .btn-warning {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+}
+
+/* Modo oscuro para tablet */
+@media (prefers-color-scheme: dark) {
+    body.device-tablet {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+    
+    body.device-tablet .welcome-card,
+    body.device-tablet .status-card,
+    body.device-tablet .action-card,
+    body.device-tablet .metric-card,
+    body.device-tablet .sales-list,
+    body.device-tablet .sale-item,
+    body.device-tablet .product-card {
+        background: #334155;
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+    
+    body.device-tablet .greeting,
+    body.device-tablet .metric-value,
+    body.device-tablet .sale-ticket,
+    body.device-tablet .product-name {
+        color: #f8fafc;
+    }
+    
+    body.device-tablet .date-time,
+    body.device-tablet .status-detail,
+    body.device-tablet .metric-label,
+    body.device-tablet .sale-client,
+    body.device-tablet .sale-time,
+    body.device-tablet .stat {
+        color: #cbd5e1;
+    }
+    
+    body.device-tablet .status-content h4,
+    body.device-tablet .metric-header h4 {
+        color: #94a3b8;
+    }
+    
+    body.device-tablet .sale-icon {
+        background: #475569;
+        color: #a7f3d0;
+    }
+    
+    body.device-tablet .product-image {
+        background: #475569;
+    }
+    
+    body.device-tablet .product-image-placeholder {
+        color: #64748b;
+    }
+    
+    body.device-tablet .bottom-nav {
+        background: #334155;
+        border-color: #475569;
+    }
+    
+    body.device-tablet .nav-item {
+        color: #cbd5e1;
+    }
+    
+    body.device-tablet .nav-item.active {
+        background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        color: white;
+    }
+    
+    body.device-tablet .alert {
+        background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+        border-color: #f59e0b;
+    }
+    
+    body.device-tablet .alert-content strong,
+    body.device-tablet .alert-content p {
+        color: #fef3c7;
+    }
+}
+
+/* Soporte para orientación horizontal en tablet */
+@media (orientation: landscape) and (max-height: 768px) {
+    body.device-tablet .mobile-header {
+        height: 65px;
+    }
+    
+    body.device-tablet .mobile-main {
+        margin-top: 65px;
+        margin-bottom: 75px;
+    }
+    
+    body.device-tablet .bottom-nav {
+        height: 75px;
+    }
+    
+    body.device-tablet .nav-item span {
+        display: none;
+    }
+    
+    body.device-tablet .nav-item i {
+        margin-bottom: 0;
+        font-size: 1.6rem;
+    }
+    
+    body.device-tablet .welcome-card {
+        padding: 1.25rem;
+    }
+    
+    body.device-tablet .greeting {
+        font-size: 1.5rem;
+    }
+    
+    body.device-tablet .welcome-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animaciones específicas para tablet */
+@keyframes tabletFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.device-tablet .dashboard-mobile > section {
+    animation: tabletFadeIn 0.5s ease forwards;
+}
+
+body.device-tablet .dashboard-mobile > section:nth-child(1) { animation-delay: 0.1s; }
+body.device-tablet .dashboard-mobile > section:nth-child(2) { animation-delay: 0.2s; }
+body.device-tablet .dashboard-mobile > section:nth-child(3) { animation-delay: 0.3s; }
+body.device-tablet .dashboard-mobile > section:nth-child(4) { animation-delay: 0.4s; }
+body.device-tablet .dashboard-mobile > section:nth-child(5) { animation-delay: 0.5s; }
+body.device-tablet .dashboard-mobile > section:nth-child(6) { animation-delay: 0.6s; }

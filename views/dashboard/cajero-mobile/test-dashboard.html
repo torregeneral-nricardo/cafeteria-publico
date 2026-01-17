@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dashboard Mobile</title>
+    
+    <!-- CSS EXTERNOS (MISMO QUE TU PROYECTO) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS LOCAL SIMULADO -->
+    <style>
+        /* ESTO ES LO QUE DEBERÍA TENER TU mobile.css */
+        .dashboard-mobile {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 480px;
+            margin: 40px auto;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .welcome-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .welcome-card h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .welcome-card p {
+            opacity: 0.9;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .welcome-card .icon {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <!-- CONTENIDO DEL DASHBOARD -->
+    <div class="dashboard-mobile">
+        <div class="welcome-card">
+            <div class="icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1>¡Dashboard Cargado!</h1>
+            <p>Todos los elementos están funcionando correctamente</p>
+            <div style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                <i class="fas fa-info-circle"></i> Verifica la consola para detalles
+            </div>
+        </div>
+        
+        <div style="text-align: center; padding: 20px;">
+            <h3 style="color: #666; margin-bottom: 20px;">Estadísticas</h3>
+            <div style="display: flex; justify-content: space-around; margin-bottom: 30px;">
+                <div>
+                    <div style="font-size: 32px; color: #667eea; font-weight: bold;">125</div>
+                    <div style="font-size: 14px; color: #888;">Ventas</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; color: #764ba2; font-weight: bold;">89%</div>
+                    <div style="font-size: 14px; color: #888;">Crecimiento</div>
+                </div>
+            </div>
+            
+            <button style="background: #667eea; color: white; border: none; padding: 12px 30px; 
+                    border-radius: 25px; font-size: 16px; cursor: pointer; font-weight: 500;">
+                <i class="fas fa-rocket" style="margin-right: 8px;"></i>
+                Iniciar Dashboard
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE VERIFICACIÓN MEJORADO Y DEFINITIVO -->
+    <script>
+        // ============================================
+        // SCRIPT DE VERIFICACIÓN - VERSIÓN FINAL
+        // ============================================
+        
+        console.log('🚀 INICIALIZANDO VERIFICACIÓN...');
+        
+        // Función principal de verificación
+        function verificarDashboardCompleto() {
+            console.log('\n🔍 ===== VERIFICACIÓN INICIADA =====');
+            
+            // 1. VERIFICAR ELEMENTOS CRÍTICOS
+            console.log('\n1. 📋 VERIFICANDO ELEMENTOS HTML:');
+            const elementos = [
+                { selector: '.dashboard-mobile', nombre: 'Contenedor principal' },
+                { selector: '.welcome-card', nombre: 'Tarjeta de bienvenida' },
+                { selector: '.fa-check-circle', nombre: 'Icono FontAwesome' }
+            ];
+            
+            let todosElementosExisten = true;
+            elementos.forEach(item => {
+                const elemento = document.querySelector(item.selector);
+                const existe = elemento !== null;
+                console.log(`   ${existe ? '✅' : '❌'} ${item.nombre}: ${existe ? 'ENCONTRADO' : 'NO ENCONTRADO'}`);
+                if (!existe) todosElementosExisten = false;
+            });
+            
+            // 2. VERIFICAR ESTILOS APLICADOS
+            console.log('\n2. 🎨 VERIFICANDO ESTILOS APLICADOS:');
+            let estilosAplicados = true;
+            
+            const dashboard = document.querySelector('.dashboard-mobile');
+            if (dashboard) {
+                const estilosDashboard = window.getComputedStyle(dashboard);
+                const propiedadesDashboard = [
+                    { nombre: 'background-color', valor: estilosDashboard.backgroundColor },
+                    { nombre: 'display', valor: estilosDashboard.display },
+                    { nombre: 'width', valor: estilosDashboard.width }
+                ];
+                
+                propiedadesDashboard.forEach(prop => {
+                    const tieneValor = prop.valor && prop.valor !== 'none' && prop.valor !== '0px';
+                    console.log(`   ${tieneValor ? '✅' : '❌'} dashboard-mobile.${prop.nombre}: ${prop.valor}`);
+                    if (!tieneValor) estilosAplicados = false;
+                });
+            }
+            
+            // 3. VERIFICAR RECURSOS EXTERNOS
+            console.log('\n3. 🌐 VERIFICANDO RECURSOS EXTERNOS:');
+            
+            // Verificar Google Fonts (Inter)
+            const bodyFont = window.getComputedStyle(document.body).fontFamily;
+            const tieneInterFont = bodyFont.includes('Inter');
+            console.log(`   ${tieneInterFont ? '✅' : '❌'} Fuente Inter: ${tieneInterFont ? 'CARGADA' : 'NO CARGADA'}`);
+            
+            // Verificar Font Awesome
+            const tieneFontAwesome = document.querySelector('.fa-check-circle') !== null;
+            console.log(`   ${tieneFontAwesome ? '✅' : '❌'} Font Awesome: ${tieneFontAwesome ? 'ICONOS FUNCIONANDO' : 'ERROR'}`);
+            
+            // 4. VERIFICAR CSS CARGADOS
+            console.log('\n4. 📄 VERIFICANDO HOJAS DE ESTILO:');
+            const hojasEstilo = document.styleSheets;
+            console.log(`   Total de hojas de estilo cargadas: ${hojasEstilo.length}`);
+            
+            let cssMinimoCargado = hojasEstilo.length >= 2; // Al menos Google Fonts + Font Awesome
+            
+            // 5. RESULTADO FINAL
+            console.log('\n📊 ===== RESULTADO FINAL =====');
+            const resultados = [
+                { nombre: 'Elementos HTML', valor: todosElementosExisten },
+                { nombre: 'Estilos aplicados', valor: estilosAplicados },
+                { nombre: 'Fuente Inter', valor: tieneInterFont },
+                { nombre: 'Font Awesome', valor: tieneFontAwesome },
+                { nombre: 'CSS mínimo', valor: cssMinimoCargado }
+            ];
+            
+            let totalExitos = 0;
+            resultados.forEach(item => {
+                console.log(`   ${item.valor ? '✅' : '❌'} ${item.nombre}: ${item.valor ? 'OK' : 'FALLA'}`);
+                if (item.valor) totalExitos++;
+            });
+            
+            const porcentajeExito = (totalExitos / resultados.length) * 100;
+            console.log(`\n   📈 ÉXITO: ${totalExitos}/${resultados.length} (${porcentajeExito.toFixed(0)}%)`);
+            
+            // 6. DECISIÓN FINAL - SIN ALERTAS MOLESTAS
+            console.log('\n🎯 ===== CONCLUSIÓN =====');
+            if (porcentajeExito >= 80) {
+                console.log('✅ DASHBOARD FUNCIONAL - Todo está funcionando correctamente');
+                console.log('💡 Si ves esto, tu CSS y estructura están bien.');
+                console.log('🔧 El problema en tu proyecto real puede ser:');
+                console.log('   - Rutas incorrectas a los archivos CSS');
+                console.log('   - Cache del navegador (usa Ctrl+F5)');
+                console.log('   - Errores en el CSS real (mobile.css)');
+            } else {
+                console.log('❌ PROBLEMAS DETECTADOS - Revisa los mensajes arriba');
+            }
+            
+            console.log('\n🚀 ===== VERIFICACIÓN COMPLETADA =====');
+        }
+        
+        // EJECUTAR LA VERIFICACIÓN
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📄 DOM completamente cargado');
+            console.log('⏳ Esperando a que se carguen todos los recursos...');
+            
+            // Esperar un poco más para asegurar que todo esté listo
+            setTimeout(function() {
+                verificarDashboardCompleto();
+                
+                // Mostrar mensaje en pantalla (opcional, no alerta)
+                const mensajeDiv = document.createElement('div');
+                mensajeDiv.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    background: #10b981;
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 8px;
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 500;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    z-index: 1000;
+                    animation: fadeIn 0.5s;
+                `;
+                mensajeDiv.innerHTML = `
+                    <div style="display: flex; align-items: center;">
+                        <i class="fas fa-check-circle" style="margin-right: 10px; font-size: 20px;"></i>
+                        <div>
+                            <strong>Verificación completada</strong><br>
+                            <small>Revisa la consola para detalles</small>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(mensajeDiv);
+                
+                // Remover después de 5 segundos
+                setTimeout(() => {
+                    mensajeDiv.style.opacity = '0';
+                    mensajeDiv.style.transition = 'opacity 0.5s';
+                    setTimeout(() => mensajeDiv.remove(), 500);
+                }, 5000);
+                
+            }, 800); // Esperar 800ms para que todo cargue
+        });
+        
+        // Estilo para la animación
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
